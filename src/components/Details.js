@@ -22,7 +22,7 @@ export default function Details(props) {
       console.log(`Height: ${window.innerHeight}; width: ${window.innerWidth}`);
     };
     window.addEventListener("resize", logResize);
-  });
+  }, []);
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
 
