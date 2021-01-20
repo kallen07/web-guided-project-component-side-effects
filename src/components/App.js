@@ -43,12 +43,10 @@ export default function App() {
   // empty deps array [] - SE is not synced with _any_ data - it will only run when the component mounts, and never again
   // dep array with deps [someSliceOfState, someProp] - SE is synced with all added data pieces - it will run once at the beginning, and then any time the specified data pieces change
 
-  let count = 0;
   useEffect(() => {
     // this is where we run the side effect
     document.title = "Side Effect ⚛️";
-    count++;
-    console.log("How many times have I run this effect?", count);
+    console.log("How many times have I run this effect?");
   });
 
   const Friend = (props) => (
