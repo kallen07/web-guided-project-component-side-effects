@@ -28,6 +28,10 @@ export default function App() {
 
   // common side effects are network requests, direct DOM manipulations, even console logs!
 
+  useEffect(() => {
+    // fetch list of friends from the API
+  });
+
   let count = 0;
   useEffect(() => {
     // this is where we run the side effect
