@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // 👉 TASK 1 - import the axios lib from node_modules
 import axios from "axios";
 
@@ -25,6 +25,8 @@ export default function App() {
   // On success, set the array of friend objects from the API into state.
 
   // Side effects are anything that affects something outside the scope of this component. ALL side effects should be handled inside the "useEffect" react hook.
+
+  // common side effects are network requests, direct DOM manipulations, even console logs!
 
   const Friend = (props) => (
     <div className="friend">
