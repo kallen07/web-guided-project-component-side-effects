@@ -12,7 +12,7 @@ export default function Details(props) {
       .get(`${BASE_URL}/friends/${friendId}?api_key=${API_KEY}`)
       .then((res) => setDetails(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [friendId]);
 
   // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
   // and puts a 'click' event handler on document.
