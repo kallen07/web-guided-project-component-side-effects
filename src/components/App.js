@@ -26,7 +26,7 @@ export default function App() {
 
   // Side effects are anything that affects something outside the scope of this component. ALL side effects should be handled inside the "useEffect" react hook.
 
-  // common side effects are network requests, direct DOM manipulations, even console logs!
+  // common side effects are network requests, direct DOM manipulations, even console logs! Another side effect (with a potential downside) is adding event listeners to the DOM.
 
   useEffect(() => {
     // fetch list of friends from the API
