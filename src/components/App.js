@@ -28,6 +28,11 @@ export default function App() {
 
   // common side effects are network requests, direct DOM manipulations, even console logs!
 
+  useEffect(() => {
+    // this is where we run the side effect
+    document.title = "Side Effect ⚛️";
+  });
+
   const Friend = (props) => (
     <div className="friend">
       {props.info.name}
