@@ -23,9 +23,9 @@ export default function Details(props) {
     };
     window.addEventListener("resize", logResize);
 
-    // return () => {
-    //   window.removeEventListener("resize", logResize);
-    // }; // return statements only run when the component is being unmounted from the DOM. THis is how we "clean up" event listeners and subscriptions
+    return () => {
+      window.removeEventListener("resize", logResize);
+    }; // return statements only run when the component is being unmounted from the DOM. THis is how we "clean up" event listeners and subscriptions
   }, []); // ⚠️ potential DANGER ⚠️ - memory leak
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
