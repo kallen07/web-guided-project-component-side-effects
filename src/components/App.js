@@ -37,7 +37,7 @@ export default function App() {
         // setFriends(res.data);
       })
       .catch((err) => console.log(err));
-  });
+  }, []);
 
   let count = 0;
   useEffect(() => {
