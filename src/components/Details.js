@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { BASE_URL, API_KEY } from '../constants'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { BASE_URL, API_KEY } from "../constants";
+import axios from "axios";
 
 export default function Details(props) {
-  const { friendId, close } = props
-  const [details, setDetails] = useState(null)
+  const { friendId, close } = props;
+  const [details, setDetails] = useState(null);
 
   // 👉 TASK 4 - Create a side effect 🥇 that runs only after first render.
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/friends/${friendId}?api_key=${API_KEY}`)
+      .then((res) => console.log(res));
+  }, []);
 
   // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
   // and puts a 'click' event handler on document.
@@ -20,20 +25,23 @@ export default function Details(props) {
   // On success, shove the details of the friend in `details` slice of state
 
   return (
-    <div className='container'>
+    <div className="container">
       <h2>Details (of friend with id {friendId}):</h2>
-      {
-        details &&
+      {details && (
         <>
-          <p>{details.name} is {details.age}</p>
+          <p>
+            {details.name} is {details.age}
+          </p>
           <p>email is {details.email}</p>
           {name} likes:
           <ul>
-            {details.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)}
+            {details.hobbies.map((hobby) => (
+              <li key={hobby}>{hobby}</li>
+            ))}
           </ul>
         </>
-      }
+      )}
       <button onClick={close}>Close</button>
     </div>
-  )
+  );
 }
