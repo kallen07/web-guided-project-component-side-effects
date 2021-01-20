@@ -34,7 +34,7 @@ export default function App() {
       .get(`${BASE_URL}/friends?api_key=${API_KEY}`)
       .then((res) => {
         // res.data
-        setFriends(res.data);
+        // setFriends(res.data);
       })
       .catch((err) => console.log(err));
   });
