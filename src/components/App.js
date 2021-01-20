@@ -39,6 +39,7 @@ export default function App() {
       .catch((err) => console.log(err));
   }, []); // <== dependency array - sync your side effect with certain pieces of data
 
+  // Syncing effects with data
   // no deps array - SE will run at the beginning and again after _every_ state/props change
   // empty deps array [] - SE is not synced with _any_ data - it will only run when the component mounts, and never again
   // dep array with deps [someSliceOfState, someProp] - SE is synced with all added data pieces - it will run once at the beginning, and then any time the specified data pieces change
