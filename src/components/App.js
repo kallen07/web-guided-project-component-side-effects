@@ -24,6 +24,8 @@ export default function App() {
   // The effect should consist of a call to the API using axios.
   // On success, set the array of friend objects from the API into state.
 
+  // Side effects are anything that affects something outside the scope of this component. ALL side effects should be handled inside the "useEffect" react hook.
+
   const Friend = (props) => (
     <div className="friend">
       {props.info.name}
