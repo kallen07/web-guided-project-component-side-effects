@@ -30,6 +30,7 @@ export default function App() {
 
   useEffect(() => {
     // fetch list of friends from the API
+    axios.get(`${BASE_URL}/friends?api_key=${API_KEY}`);
   });
 
   let count = 0;
