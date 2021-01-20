@@ -17,6 +17,12 @@ export default function Details(props) {
   // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
   // and puts a 'click' event handler on document.
   // See what happens if we don't clean up.
+  useEffect(() => {
+    const logResize = () => {
+      console.log(`Height: ${window.innerHeight}; width: ${window.innerWidth}`);
+    };
+    window.addEventListener("resize", logResize);
+  });
 
   // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
 
