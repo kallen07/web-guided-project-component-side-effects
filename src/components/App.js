@@ -34,10 +34,14 @@ export default function App() {
       .get(`${BASE_URL}/friends?api_key=${API_KEY}`)
       .then((res) => {
         // res.data
-        // setFriends(res.data);
+        setFriends(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, []); // <== dependency array - sync your side effect with certain pieces of data
+
+  // no deps array - SE will run after _every_ state/props change
+  // empty deps array [] - SE is not synced with _any_ data - it will only run when the component mounts, and never again
+  // dep array with deps [someSliceOfState, someProp] - SE is synced with all added data pieces - it will run once at the beginning, and then any time the specified data pieces change
 
   let count = 0;
   useEffect(() => {
