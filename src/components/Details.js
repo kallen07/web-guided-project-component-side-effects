@@ -10,7 +10,8 @@ export default function Details(props) {
   useEffect(() => {
     axios
       .get(`${BASE_URL}/friends/${friendId}?api_key=${API_KEY}`)
-      .then((res) => console.log(res));
+      .then((res) => setDetails(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
   // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
