@@ -28,9 +28,12 @@ export default function App() {
 
   // common side effects are network requests, direct DOM manipulations, even console logs!
 
+  let count = 0;
   useEffect(() => {
     // this is where we run the side effect
     document.title = "Side Effect ⚛️";
+    count++;
+    console.log("How many times have I run this effect?", count);
   });
 
   const Friend = (props) => (
