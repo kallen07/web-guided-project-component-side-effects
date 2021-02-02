@@ -17,7 +17,7 @@ export default function Details(props) {
   // 👉 TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
   // Whenever props.friendId updates we should trigger a fetch for details of the friend.
   // The URL should end up looking like `http://localhost:4000/friends/1?api_key=xyz`
-  // On success, shove the details of the friend in `details` slice of state
+  // On success, put the details of the friend in `details` slice of state
 
   return (
     <div className='container'>
